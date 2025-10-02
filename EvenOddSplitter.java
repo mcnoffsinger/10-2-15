@@ -32,11 +32,29 @@ public static Scanner scanner = new Scanner(System.in);
 
 
     }
+    public static int[] getOdds(int[] input){
+        int evenCounter = 0;
+        for (int number : input){
+            if (number % 2 == 1){
+                evenCounter++;
+            }
+
+        }
+        int[] evens = new int[evenCounter];
+        int evenCount = 0;
+        for (int number : input){
+            if(number%2 == 1){
+                evens[evenCount] = number;
+                evenCount ++;
 
 
-    public static void main(String[] args){
-        System.out.println("Enter 15 integers with one space between each integer: ");
-        int[] input = intSplitter(getInput(""));
+            }
+        }
+        return evens;
+
+
+    }
+    public static int[] getEvens(int[] input){
         int evenCounter = 0;
         for (int number : input){
             if (number % 2 == 0){
@@ -46,28 +64,37 @@ public static Scanner scanner = new Scanner(System.in);
         }
         int[] evens = new int[evenCounter];
         int evenCount = 0;
-
-        int[] odds = new int[15-evenCounter];
-        int oddcount = 0;
-
         for (int number : input){
             if(number%2 == 0){
                 evens[evenCount] = number;
                 evenCount ++;
 
 
-            }else{
-                odds[oddcount] = number;
-                oddcount ++;
             }
         }
+        return evens;
+
+
+    }
+
+
+    public static void main(String[] args){
+        System.out.println("Enter 15 integers with one space between each integer: ");
+        int[] input = intSplitter(getInput(""));
+        
+        
+        
+
+    
+
+        
         System.out.print("Even Numbers: ");
-        for(int x : evens){
+        for(int x : getEvens(input)){
             System.out.print(x + " ");
         }
         System.out.println("");
         System.out.print("Odd Numbers: ");
-        for(int x : odds){
+        for(int x : getOdds(input)){
             System.out.print(x + " ");
         }
 
