@@ -11,6 +11,16 @@ public class ShufflePlaylist {
      * then prints those "songs"
      */
 
+     public static String[] shuffle(String[] playlist){
+        for(int i = 0; i < playlist.length; i++){
+        String temp = playlist[i];
+        int j = (int)(Math.random()*playlist.length);
+        playlist[i] = playlist[j];
+        playlist[j] = temp;
+
+        }
+        return playlist;
+     }
 
 
 
@@ -26,16 +36,10 @@ public class ShufflePlaylist {
 
     
 
-    for(int i = 0; i < playlist.length; i++){
-        String temp = playlist[i];
-        int j = (int)(Math.random()*playlist.length);
-        playlist[i] = playlist[j];
-        playlist[j] = temp;
-
-    }
+    playlist = shuffle(playlist);
     System.out.println("Shuffled Playlist:");
     for (int i =0; i<playlist.length;i++){
-        System.out.print(i + ".");
+        System.out.print((i+1) + ".");
         System.out.println(playlist[i]);
     };
 
