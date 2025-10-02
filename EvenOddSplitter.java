@@ -33,24 +33,24 @@ public static Scanner scanner = new Scanner(System.in);
 
     }
     public static int[] getOdds(int[] input){
-        int evenCounter = 0;
+        int OddCounter = 0;
         for (int number : input){
             if (number % 2 == 1){
-                evenCounter++;
+                OddCounter++;
             }
 
         }
-        int[] evens = new int[evenCounter];
-        int evenCount = 0;
+        int[] odds = new int[OddCounter];
+        int oddCount = 0;
         for (int number : input){
             if(number%2 == 1){
-                evens[evenCount] = number;
-                evenCount ++;
+                odds[oddCount] = number;
+                oddCount ++;
 
 
             }
         }
-        return evens;
+        return odds;
 
 
     }
